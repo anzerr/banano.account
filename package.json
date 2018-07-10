@@ -1,12 +1,13 @@
 {
 	"name": "bananoAccount",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "",
 	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
+	"scripts": {},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"blake2b": "git+https://github.com/anzerr/blake2b.git"
+	}
 }

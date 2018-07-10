@@ -1,9 +1,10 @@
 'use strict';
 
 const util = require('./libary/util.js');
-const blake = require('./libary/blake2b.js');
+const blake = require('blake2b');
 const nacl = require('./libary/nacl.js');
 const seed = require('./libary/seed.js');
+const crypto = require('crypto');
 
 const account = {
 	getPublicAccountID: (accountPublicKeyBytes) => {
@@ -32,7 +33,12 @@ const account = {
 		let out = key.slice(0, 64);
 		if (out.length < 64) {
 			let char = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-			let s = seed(Buffer.from(out).readUIntBE(0, out.length));
+			const hash = crypto.createHash('sha256').update(key).digest('hex');
+			let n = 0, max = 1, cap = Math.pow(16, max);
+			for (let i = 0; i < hash.length; i += max) {
+				n += Math.round(parseInt(hash.substr(i, max), 16) / cap * 9) * Math.pow(10, Math.floor(i / max));
+			}
+			let s = seed(n);
 			while (out.length < 64) {
 				out += char[Math.floor(char.length * s.next())];
 			}

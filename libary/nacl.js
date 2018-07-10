@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 
-const blake2b = require('./blake2b.js');
+const blake2b = require('blake2b');
 const nacl = {};
 
 // Ported in 2014 by Dmitry Chestnykh and Devi Mandiri.
