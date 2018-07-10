@@ -1,7 +1,8 @@
 'use strict';
 
-const account = require('./index.js'), debug = false;
+const account = require('./index.js');
 
+let debug = false;
 const test = (seed, map) => {
 	let a = account(seed, 0);
 	if (debug) {
