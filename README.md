@@ -12,10 +12,13 @@ Usage
 ```javascript
 const createAccount = require('bananoAccount');
 
-let a = createAccount('test', 0);
+let a = createAccount('test1', 0);
 console.log(a);
 /**
-	public: ban_3ykpjz449j9gzob7h3xycn87hgn1411cgycbcbhh8mabrbsyxpw4crqfy3rd
-	seed: testHNLTNYTSLWGXH4DZ5CT08E2I4RKGJSRRMIVI2ATVFZCOFXIKYBTXHL8HBAOD
+    {
+        seed: 'test1VXYT32558BITRL9UTZ0LEOBX9GZ5DZTJBNBG15RGGP9NNX51TDBDQU0M25I',
+        secret: '8f4c2d6edeeb9a09cbee7ddc4f031c1c360711ce841c29b67c9e095855127fee',
+        public: 'ban_16ruzc1wbz1tuau36r5r1hpoccnwtnimkky35aibn3kf4mhm7nqp7i39wz9f'
+    }
 **/
 ```
