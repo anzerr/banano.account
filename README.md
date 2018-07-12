@@ -10,9 +10,9 @@ npm install --save https://github.com/anzerr/bananoAccount.git
 
 Usage
 ```javascript
-const createAccount = require('bananoAccount');
+const account = require('bananoAccount');
 
-let a = createAccount('test1', 0);
+let a = account.create('test1', 0);
 console.log(a);
 /**
     {

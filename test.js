@@ -4,7 +4,7 @@ const account = require('./index.js');
 
 let debug = false;
 const test = (seed, map) => {
-	let a = account(seed, 0);
+	let a = account.create(seed, 0);
 	if (debug) {
 		console.log({
 			seed: a.seed,

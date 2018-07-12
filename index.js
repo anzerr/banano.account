@@ -47,15 +47,21 @@ const account = {
 	}
 };
 
-module.exports = (key, index) => {
-	let paddedSeed = account.padSeed(key);
-	let secret = account.generateAccountSecretKeyBytes(util.hex.toUint8(paddedSeed), index);
-	let pair = account.generateAccountKeyPair(secret);
-	return {
-		seed: paddedSeed,
-		index: index,
-		secret: secret.toString('hex'),
-		pair: pair,
-		public: account.getPublicAccountID(pair.publicKey)
-	};
+module.exports = {
+	create: (key, index) => {
+		let paddedSeed = account.padSeed(key);
+		let secret = account.generateAccountSecretKeyBytes(util.hex.toUint8(paddedSeed), index);
+		let pair = account.generateAccountKeyPair(secret);
+		return {
+			seed: paddedSeed,
+			index: index,
+			secret: secret.toString('hex'),
+			pair: pair,
+			public: account.getPublicAccountID(pair.publicKey)
+		};
+	},
+	
+	getPublic: (pub) => {
+		return account.getPublicAccountID(pub);
+	}
 };
