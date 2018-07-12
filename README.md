@@ -5,12 +5,12 @@ This is a simple libary to create fast throwable banano accounts
 Install
 
 ```shell
-npm install --save https://github.com/anzerr/bananoAccount.git
+npm install --save git@github.com:anzerr/banano.account.git
 ```
 
 Usage
 ```javascript
-const account = require('bananoAccount');
+const account = require('banano.account');
 
 let a = account.create('test1', 0);
 console.log(a);
