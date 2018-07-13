@@ -1,9 +1,9 @@
 'use strict';
 
-const util = require('./libary/util.js');
+const util = require('uint');
 const blake = require('blake2b');
-const nacl = require('./libary/nacl.js');
-const seed = require('./libary/seed.js');
+const nacl = require('nacl');
+const seed = require('./src/seed.js');
 const crypto = require('crypto');
 
 const account = {
@@ -60,7 +60,7 @@ module.exports = {
 			public: account.getPublicAccountID(pair.publicKey)
 		};
 	},
-	
+
 	getPublic: (pub) => {
 		return account.getPublicAccountID(pub);
 	}

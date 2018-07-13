@@ -11,6 +11,8 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"blake2b": "git+https://github.com/anzerr/blake2b.git"
+		"blake2b": "git+https://github.com/anzerr/blake2b.git",
+		"nacl": "git+https://github.com/anzerr/nacl.git",
+		"uint": "git+https://github.com/anzerr/uint.git"
 	}
 }
