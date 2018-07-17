@@ -61,7 +61,11 @@ module.exports = {
 		};
 	},
 
-	getPublic: (pub) => {
+	getPublic: (p) => {
+		let pub = p instanceof Buffer ? p : Buffer.from(p, typeof p === 'string' ? 'hex' : undefined);
+		if (pub.length !== 32) {
+			throw new Error('public account has wrong length');
+		}
 		return account.getPublicAccountID(pub);
 	}
 };
