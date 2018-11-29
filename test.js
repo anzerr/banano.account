@@ -1,7 +1,40 @@
 'use strict';
 
 const assert = require('assert'),
-	account = require('./index.js');
+	account = require('./index.js'),
+	util = require('uint'),
+	aa = require('./src/account.js');
+
+const time = (k, cd) => {
+	let start = process.hrtime();
+	cd();
+	let end = process.hrtime(start);
+	console.log(k, (((end[0] * 1e9) + end[1]) / 1e9).toFixed(3));
+};
+
+const perf = (key) => {
+	let paddedSeed = null,
+		secret = null,
+		pair = null;
+	time('padSeed', () => {
+		paddedSeed = aa.padSeed(key);
+	});
+	time('generateAccountSecretKeyBytes', () => {
+		secret = aa.generateAccountSecretKeyBytes(util.hex.toUint8(paddedSeed), 0);
+	});
+	time('generateAccountKeyPair', () => {
+		pair = aa.generateAccountKeyPair(secret);
+	});
+	assert.strictEqual('8f4c2d6edeeb9a09cbee7ddc4f031c1c360711ce841c29b67c9e095855127fee', Buffer.from(pair.secretKey).toString('hex'));
+	assert.strictEqual('131bfa81c4fc1ada3612607803ed552a9cd521394bc11a209a064d14df32d2f6', Buffer.from(pair.publicKey).toString('hex'));
+};
+for (let i = 0; i < 10; i++) {
+	console.log('--- 1 ---');
+	perf('test1VXYT32558BITRL9UTZ0LEOBX9GZ5DZTJBNBG15RGGP9NNX51TDBDQU0M25I');
+	console.log('\n--- 2 ---');
+	perf('test1');
+	console.log('');
+}
 
 const test = (seed, map) => {
 	let a = account.create(seed, 0);
