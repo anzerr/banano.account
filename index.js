@@ -4,6 +4,8 @@ const util = require('uint');
 const account = require('./src/account.js');
 
 module.exports = {
+	util: account,
+
 	create: (key, index) => {
 		let paddedSeed = account.padSeed(key);
 		let secret = account.generateAccountSecretKeyBytes(util.hex.toUint8(paddedSeed), index);
@@ -21,7 +23,7 @@ module.exports = {
 	},
 
 	getAccountPublic: (p) => {
-		let pub = p instanceof Buffer ? p : Buffer.from(p, typeof p === 'string' ? 'hex' : undefined);
+		let pub = account.toBuffer(p);
 		if (pub.length !== 32) {
 			throw new Error('public account has wrong length');
 		}
