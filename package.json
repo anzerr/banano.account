@@ -8,18 +8,30 @@
 		"commit": "git add . && git commit -m \"fast save\" && git push origin master"
 	},
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "anzerr",
+	"license": "MIT",
 	"dependencies": {
 		"blake2b": "git+https://github.com/anzerr/blake2b.git",
 		"nacl": "git+https://github.com/anzerr/nacl.git",
 		"uint": "git+https://github.com/anzerr/uint.git"
 	},
 	"devDependencies": {
-		"eslint": "^5.8.0",
+		"eslint": "5.11.1",
 		"eslint-config-basic": "git+ssh://git@github.com/anzerr/eslintrc.git"
 	},
 	"eslintConfig": {
 		"extends": "eslint-config-basic"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:anzerr/banano.account.git"
+	},
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"types": "index.d.ts",
+	"bugs": {
+		"url": "https://github.com/anzerr/banano.account/issues"
+	},
+	"homepage": "https://github.com/anzerr/banano.account#readme"
 }
