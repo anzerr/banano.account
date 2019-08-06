@@ -16,7 +16,6 @@
 		"uint": "git+https://github.com/anzerr/uint.git"
 	},
 	"devDependencies": {
-		"eslint": "5.11.1",
 		"eslint-config-basic": "git+ssh://git@github.com/anzerr/eslintrc.git"
 	},
 	"eslintConfig": {

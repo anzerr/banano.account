@@ -1,4 +1,3 @@
-'use strict';
 
 const util = require('uint');
 const account = require('./src/account.js');

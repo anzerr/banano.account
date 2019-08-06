@@ -2,13 +2,12 @@
 ### `Intro`
 This is a simple libary to create fast throwable banano accounts
 
-Install
-
-```shell
-npm install --save git@github.com:anzerr/banano.account.git
+#### `Install`
+``` bash
+npm install --save git+https://github.com/anzerr/banano.account.git
 ```
 
-Usage
+#### `Usage`
 ```javascript
 const account = require('banano.account');
 
