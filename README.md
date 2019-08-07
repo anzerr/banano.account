@@ -5,6 +5,7 @@ This is a simple libary to create fast throwable banano accounts
 #### `Install`
 ``` bash
 npm install --save git+https://github.com/anzerr/banano.account.git
+npm install --save @anzerr/banano.account
 ```
 
 #### `Usage`
