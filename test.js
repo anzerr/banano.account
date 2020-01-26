@@ -9,7 +9,7 @@ const time = (k, cd) => {
 	let start = process.hrtime();
 	cd();
 	let end = process.hrtime(start);
-	console.log(k, (((end[0] * 1e9) + end[1]) / 1e9).toFixed(3));
+	console.log(k, (((end[0] * 1e9) + end[1]) / 1e9).toFixed(6));
 };
 
 const perf = (key) => {
@@ -53,9 +53,9 @@ test('test1', {
 });
 
 test('test2', {
-	seed: 'test2NPWBI73U7C6BHVYZEI84GNI6MX2MTL0L48O3PHXVE13WUTDRF77EVL4QB08',
-	secret: '42414b2668645757ac2da6eb390247a1ecc659d7fa0d4e9f949cda033d5ecd07',
-	account: 'ban_1epct39z8wsrn1yc4w6tswhe8yjsmz7484nrh4yx4mhopgk9xgk5ufkozzu5'
+	seed: 'test2X659TPJK68UZP1JFM8RZJ5IT0OJRU2TGULXAIOTY4UEOS8R2US3O596B1PN',
+	secret: '049f1a2ea8d34d105a5fb8dfd974a64556030d254ed6e11a1722866950a2b884',
+	account: 'ban_179k48kmomfm4mx4dhbb9afucnxj13g8a79khxy4un53afuqkcfc34hrzje5'
 });
 
 try {
